@@ -1,571 +1,573 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
 
-  <head>
-    <title>Baudart's Thesis</title>
-    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
+<head>
+  <title>Baudart's Thesis</title>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <link rel="stylesheet" href="../bootstrap.min.css" type="text/css">
-      <link rel="stylesheet" href="../style.css" type="text/css" />
-      <link rel="stylesheet" href="./style.css" type="text/css" />
-  </head>
+  <link rel="stylesheet" href="./bootstrap.min.css" type="text/css">
+  <link rel="stylesheet" href="./old-style.css" type="text/css" />
+  <link rel="stylesheet" href="./style.css" type="text/css" />
+</head>
 
-        <body>
+<body>
 
-          <div class="container-fluid">
-
-
-            <div class="content">
+  <div class="container-fluid">
 
 
-              <section id="about">
-                <h1 align="center">A Synchronous Approach to<br>Quasi-Periodic Systems</h1>
-                  <h3 align="center">Guillaume Baudart's PhD Thesis</h3>
+    <div class="content">
 
-            <div id="menu">
-                  <div class="row ">
-                    <div class="col-sm-3">
-                      <a href="./baudart-thesis.pdf">Dissertation</a>
-                    </div>
-                    <div class="col-sm-3">
-                      <a href="http://github.com/gbdrt/quasi-periodic">GitHub</a>
-                    </div>
-                    <div class="col-sm-3">
-                      <a href="#publications">Publications</a>
-                    </div>
-                    <div class="col-sm-3">
-                     <a href="#music">Music</a>
-                    </div>
-                  </div>
+
+      <section id="about">
+        <h1 align="center">A Synchronous Approach to<br>Quasi-Periodic Systems</h1>
+        <h3 align="center">Guillaume Baudart's PhD Thesis</h3>
+
+        <div id="menu">
+          <div class="row ">
+            <div class="col-sm-3">
+              <a href="./baudart-thesis.pdf">Dissertation</a>
+            </div>
+            <div class="col-sm-3">
+              <a href="http://github.com/gbdrt/quasi-periodic">GitHub</a>
+            </div>
+            <div class="col-sm-3">
+              <a href="#publications">Publications</a>
+            </div>
+            <div class="col-sm-3">
+              <a href="#music">Music</a>
+            </div>
+          </div>
+        </div>
+
+        <section id="abstract">
+          <h2>Abstract</h2>
+
+          <p>
+            In this thesis we study embedded controllers implemented as sets of
+            unsynchronized periodic processes. Each process activates
+            quasi-periodically, that is, periodically with bounded jitter, and
+            communicates with bounded transmission delays. Such reactive systems,
+            termed <i>quasi-periodic</i>, exist as soon as two periodic processes are
+            connected together. In the distributed systems literature they are
+            also known as synchronous real-time models. We focus on techniques
+            for the design and analysis of such systems without imposing a global
+            clock synchronization.
+          </p>
+
+          <p>
+            Synchronous languages were introduced as domain specific languages for
+            the design of reactive systems. They offer an ideal framework to
+            program, analyze, and verify quasi-periodic systems. Based on a
+            synchronous approach, this thesis makes contributions to the treatment
+            of quasi-periodic systems along three themes: verification,
+            implementation, and simulation.
+          </p>
+
+          <p>
+            Verification: The <i>quasi-synchronous abstraction</i> is a discrete
+            abstraction proposed by Paul Caspi for model checking safety
+            properties of quasi-periodic systems. We show that this abstraction
+            is not sound in general and give necessary and sufficient conditions
+            on both the static communication graph of the application and the
+            real-time characteristics of the architecture to recover soundness.
+            We then generalize these results to multirate systems.
+          </p>
+
+          <p>
+            Implementation: <i>Loosely time-triggered architectures</i> are protocols
+            designed to ensure the correct execution of an application running on
+            a quasi-periodic system. We propose a unified framework that
+            encompasses both the application and the protocol controllers. This
+            framework allows us to simplify existing protocols, propose optimized
+            versions, and give new correctness proofs. We instantiate our
+            framework with a protocol based on clock synchronization to compare
+            the performance of the two approaches.
+          </p>
+
+          <p>
+            Simulation: Quasi-periodic systems are but one example of timed
+            systems involving real-time characteristics and tolerances. For such
+            nondeterministic models, we propose a <i>symbolic simulation</i> scheme
+            inspired by model checking techniques for timed automata. We show how
+            to compile a model mixing nondeterministic continuous-time and
+            discrete-time dynamics into a discrete program manipulating sets of
+            possible values. Each trace of the resulting program captures a set
+            of possible executions of the source program.
+          </p>
+
+
+          <div class="btn-group hidden-xs">
+            <a class="btn btn-primary" href="./baudart-thesis.pdf" role="button">Dissertation</a>
+            <a class="btn btn-primary" href="./baudart-slides.pdf" role="button">Slides</a>
+          </div>
+          <div class="btn-group-vertical visible-xs text-center">
+            <a class="btn btn-primary" href="./baudart-thesis.pdf" role="button">Dissertation</a>
+            <a class="btn btn-primary" href="./baudart-slides.pdf" role="button">Slides</a>
+          </div>
+
+          <section id="code">
+            <h2>Source Code</h2>
+
+            <p>
+              The source code presented throughout the thesis is available on
+              GitHub.
+            </p>
+
+            <table class="table table-striped table-bordered">
+              <thead>
+                <tr>
+                  <th>Dependency</th>
+                  <th>Version</th>
+                  <th>Reason</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><a href="http://zelus.di.ens.fr/download.html">Zélus</a></td>
+                  <td>Required == 1.2.3</td>
+                  <td>Compile the examples to OCaml code</td>
+                </tr>
+                <tr>
+                  <td><a href="http://ocaml.org/">OCaml</a></td>
+                  <td>Required == 4.04.0</td>
+                  <td>Run the Zélus compiler and compile the examples</td>
+                </tr>
+                <tr>
+                  <td><a href="http://www.xquartz.org/">XQuartz</a></td>
+                  <td>Optional &gt;= 2.7.9</td>
+                  <td>Required on MacOS to run the examples using OCaml Graphics</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div id="buttons">
+              <div class="btn-group hidden-xs">
+                <a class="btn btn-primary" href="http://github.com/gbdrt/quasi-periodic" role="button">View on GitHub</a>
+                <a class="btn btn-primary" href="http://zelus.di.ens.fr/download.html" role="button">Install Zélus</a>
+                <a class="btn btn-primary" href="http://ocaml.org/" role="button">Install OCaml</a>
+              </div>
+              <div class="btn-group-vertical visible-xs">
+                <a class="btn btn-primary" href="http://github.com/gbdrt/quasi-periodic" role="button">View on GitHub</a>
+                <a class="btn btn-primary" href="http://zelus.di.ens.fr/download.html" role="button">Install Zélus</a>
+                <a class="btn btn-primary" href="http://ocaml.org/" role="button">Install OCaml</a>
+              </div>
             </div>
 
- <section id="abstract">
-   <h2>Abstract</h2>
+            <section id="publications">
+              <h2>Related Publications</h2>
 
-   <p>
-In this thesis we study embedded controllers implemented as sets of
-unsynchronized periodic processes.  Each process activates
-quasi-periodically, that is, periodically with bounded jitter, and
-communicates with bounded transmission delays.  Such reactive systems,
-termed <i>quasi-periodic</i>, exist as soon as two periodic processes are
-connected together.  In the distributed systems literature they are
-also known as synchronous real-time models.  We focus on techniques
-for the design and analysis of such systems without imposing a global
-clock synchronization.
-   </p>
+              <ul>
+                <li><strong>Soundness of the Quasi-Synchronous Abstraction</strong>,<br>
+                  with Timothy Bourke and Marc Pouzet<br>
+                  <i>International Conference on Formal Methods in Computer-Aided Design (FMCAD), Oct. 2016</i>
+                  <br>
+                  [ <a href="../bibtex/fmcad16.html">bibtex</a>
+                  | <a href="../papers/fmcad16.pdf">paper</a> ]
 
-   <p>
-Synchronous languages were introduced as domain specific languages for
-the design of reactive systems.  They offer an ideal framework to
-program, analyze, and verify quasi-periodic systems.  Based on a
-synchronous approach, this thesis makes contributions to the treatment
-of quasi-periodic systems along three themes: verification,
-implementation, and simulation.
-   </p>
+                  <p>
+                    We show that the 'quasi-synchronous'
+                    abstraction is not sound for general systems
+                    of more than two processes and propose
+                    necessary and sufficient conditions to recover
+                    soundness.
+                  </p>
 
-   <p>
-Verification: The <i>quasi-synchronous abstraction</i> is a discrete
-abstraction proposed by Paul Caspi for model checking safety
-properties of quasi-periodic systems.  We show that this abstraction
-is not sound in general and give necessary and sufficient conditions
-on both the static communication graph of the application and the
-real-time characteristics of the architecture to recover soundness.
-We then generalize these results to multirate systems.
-   </p>
+                  <div class="info-wrapper">
+                    <input type="checkbox" id="showhide6">
+                    <label for="showhide6">
+                      <div class="more">
+                        <a>Show more</a>
+                      </div>
+                      <div>
+                        <a>Show less</a>
+                      </div>
+                    </label>
+                    <div class="info">
 
-   <p>
-Implementation: <i>Loosely time-triggered architectures</i> are protocols
-designed to ensure the correct execution of an application running on
-a quasi-periodic system.  We propose a unified framework that
-encompasses both the application and the protocol controllers.  This
-framework allows us to simplify existing protocols, propose optimized
-versions, and give new correctness proofs.  We instantiate our
-framework with a protocol based on clock synchronization to compare
-the performance of the two approaches.
-   </p>
-
-   <p>
-Simulation: Quasi-periodic systems are but one example of timed
-systems involving real-time characteristics and tolerances.  For such
-nondeterministic models, we propose a <i>symbolic simulation</i> scheme
-inspired by model checking techniques for timed automata.  We show how
-to compile a model mixing nondeterministic continuous-time and
-discrete-time dynamics into a discrete program manipulating sets of
-possible values.  Each trace of the resulting program captures a set
-of possible executions of the source program.
-   </p>
-
-
-<div class="btn-group hidden-xs">
-  <a class="btn btn-primary" href="./baudart-thesis.pdf" role="button">Dissertation</a>
-  <a class="btn btn-primary" href="./baudart-slides.pdf" role="button">Slides</a>
-</div>
-<div class="btn-group-vertical visible-xs text-center">
-  <a class="btn btn-primary" href="./baudart-thesis.pdf" role="button">Dissertation</a>
-  <a class="btn btn-primary" href="./baudart-slides.pdf" role="button">Slides</a>
-</div>
-
-<section id="code">
-  <h2>Source Code</h2>
-
-  <p>
-    The source code presented throughout the thesis is available on
-    GitHub.
-  </p>
-
-  <table class="table table-striped table-bordered">
-    <thead>
-      <tr>
-        <th>Dependency</th>
-        <th>Version</th>
-        <th>Reason</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a href="http://zelus.di.ens.fr/download.html">Zélus</a></td>
-        <td>Required == 1.2.3</td>
-        <td>Compile the examples to OCaml code</td>
-      </tr>
-      <tr>
-        <td><a href="http://ocaml.org/">OCaml</a></td>
-        <td>Required == 4.04.0</td>
-        <td>Run the Zélus compiler and compile the examples</td>
-      </tr>
-      <tr>
-        <td><a href="http://www.xquartz.org/">XQuartz</a></td>
-        <td>Optional &gt;= 2.7.9</td>
-        <td>Required on MacOS to run the examples using OCaml Graphics</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <div id="buttons">
-    <div class="btn-group hidden-xs">
-    <a class="btn btn-primary" href="http://github.com/gbdrt/quasi-periodic" role="button">View on GitHub</a>
-    <a class="btn btn-primary" href="http://zelus.di.ens.fr/download.html" role="button">Install Zélus</a>
-    <a class="btn btn-primary" href="http://ocaml.org/" role="button">Install OCaml</a>
-    </div>
-    <div class="btn-group-vertical visible-xs">
-    <a class="btn btn-primary" href="http://github.com/gbdrt/quasi-periodic" role="button">View on GitHub</a>
-    <a class="btn btn-primary" href="http://zelus.di.ens.fr/download.html" role="button">Install Zélus</a>
-    <a class="btn btn-primary" href="http://ocaml.org/" role="button">Install OCaml</a>
-</div>
-  </div>
-
-<section id="publications">
-  <h2>Related Publications</h2>
-
-<ul>
-                    <li><strong>Soundness of the Quasi-Synchronous Abstraction</strong>,<br>
-                    with Timothy Bourke and Marc Pouzet<br>
-                      <i>International Conference on Formal Methods in Computer-Aided Design (FMCAD), Oct. 2016</i>
-                      <br>
-                      [ <a href="../bibtex/fmcad16.html">bibtex</a>
-                      | <a href="../papers/fmcad16.pdf">paper</a> ]
-
-                      <p>
-                        We show that the 'quasi-synchronous'
-                        abstraction is not sound for general systems
-                        of more than two processes and propose
-                        necessary and sufficient conditions to recover
-                        soundness.
+                      <p class="abstract">
+                        Many critical real-time embedded
+                        systems are implemented as a set of processes that execute
+                        periodically with bounded jitter and communicate with bounded
+                        transmission delay. The 'quasi-synchronous' abstraction was introduced
+                        by P. Caspi for model-checking the safety properties of applications
+                        running on such systems. The simplicity of the abstraction is
+                        appealing: the only events are process activations; logical steps
+                        account for transmission delays; and no process may be activated more
+                        than twice between two successive activations of any other.
                       </p>
 
-                        <div class="info-wrapper">
-                          <input type="checkbox" id="showhide6">
-                            <label for="showhide6">
-                              <div class="more">
-                                <a>Show more</a>
-                              </div>
-                              <div>
-                                <a>Show less</a>
-                              </div>
-                            </label>
-                            <div class="info">
-
-                              <p class="abstract">
-                                Many critical real-time embedded
-                                systems are implemented as a set of processes that execute
-                                periodically with bounded jitter and communicate with bounded
-                                transmission delay.  The 'quasi-synchronous' abstraction was introduced
-                                by P. Caspi for model-checking the safety properties of applications
-                                running on such systems.  The simplicity of the abstraction is
-                                appealing: the only events are process activations; logical steps
-                                account for transmission delays; and no process may be activated more
-                                than twice between two successive activations of any other.
-                              </p>
-
-                              <p class="abstract">
-                                We formalize the relation between the real-time model and the
-                                quasi-synchronous abstraction by introducing the notion of a unitary
-                                discretization.
-                                Even though the abstraction has been applied several times in the
-                                literature, we show, surprisingly, that it is not sound for general systems
-                                of more than two processes.
-                                Our central result is to propose necessary and sufficient conditions on both
-                                communication topologies and timing parameters to recover soundness.
-                              </p>
-                            </div>
-                          </div>
-                        </li>
+                      <p class="abstract">
+                        We formalize the relation between the real-time model and the
+                        quasi-synchronous abstraction by introducing the notion of a unitary
+                        discretization.
+                        Even though the abstraction has been applied several times in the
+                        literature, we show, surprisingly, that it is not sound for general systems
+                        of more than two processes.
+                        Our central result is to propose necessary and sufficient conditions on both
+                        communication topologies and timing parameters to recover soundness.
+                      </p>
+                    </div>
+                  </div>
+                </li>
                 <li><strong>Loosely Time-Triggered Architectures: Improvements and Comparisons</strong>,<br>
-                    with Albert Benveniste and Timothy Bourke<br>
-                      <i>International Conference on Embedded Software (EMSOFT), Oct. 2015.</i>
-                      Best paper nominee<br>
-                      [ <a href="../bibtex/emsoft15.html">bibtex</a>
-                      | <a href="../papers/emsoft15.pdf">paper</a> ]
+                  with Albert Benveniste and Timothy Bourke<br>
+                  <i>International Conference on Embedded Software (EMSOFT), Oct. 2015.</i>
+                  Best paper nominee<br>
+                  [ <a href="../bibtex/emsoft15.html">bibtex</a>
+                  | <a href="../papers/emsoft15.pdf">paper</a> ]
 
-                      <p>
-                      An LTTA is the combinaison of a Quasi-Periodic
-                      architecture with a protocol for deploying
-                      synchronous applications.  We
-                      present two protocols in a
-                      synchronous framework and compare this approach
-                      to Clock-Synchronization.
+                  <p>
+                    An LTTA is the combinaison of a Quasi-Periodic
+                    architecture with a protocol for deploying
+                    synchronous applications. We
+                    present two protocols in a
+                    synchronous framework and compare this approach
+                    to Clock-Synchronization.
+                  </p>
+
+                  <div class="info-wrapper">
+                    <input type="checkbox" id="showhide5">
+                    <label for="showhide5">
+                      <div class="more">
+                        <a>Show more</a>
+                      </div>
+                      <div>
+                        <a>Show less</a>
+                      </div>
+                    </label>
+                    <div class="info">
+
+                      <p class="abstract">Loosely Time-Triggered Architectures (LTTAs) are a proposal for constructing
+                        distributed embedded control systems.
+                        They build on the quasi-periodic architecture, where computing units execute
+                        'almost
+                        periodically', by adding a thin layer of middleware that facilitates
+                        the implementation of synchronous applications.
                       </p>
+                      <p class="abstract">
+                        We show how the deployment of a synchronous application
+                        on a quasi-periodic architecture can be modeled using a synchronous
+                        formalism. Then we detail two protocols, Back-Pressure LTTA,
+                        reminiscent of elastic circuits, and Time-Based LTTA, based on waiting.
+                        Compared to previous work, we present controller models that can be compiled
+                        for execution and a simplified version of the Time-Based protocol.
+                        We also compare the LTTA approach with architectures based
+                        on clock synchronization.</p>
+                    </div>
+                  </div>
+                </li>
 
-                        <div class="info-wrapper">
-                          <input type="checkbox" id="showhide5">
-                            <label for="showhide5">
-                              <div class="more">
-                                <a>Show more</a>
-                              </div>
-                              <div>
-                                <a>Show less</a>
-                              </div>
-                            </label>
-                            <div class="info">
+                <li><strong>Loosely Time-Triggered Architectures: Improvements and Comparisons</strong>,<br>
+                  with Albert Benveniste and Timothy Bourke<br>
+                  <i>ACM Transaction on Embedded Computing Systems (TECS), Vol.15 N.4 Aug. 2016</i>
+                  <br>
+                  [ <a href="../bibtex/tecs16.html">bibtex</a>
+                  | <a href="../papers/tecs16.pdf">paper</a>
+                  | <a href="http://baudart.eu/tecs2016/">website</a> ]
 
-                              <p class="abstract">Loosely Time-Triggered Architectures (LTTAs) are a proposal for constructing
-                                distributed embedded control systems.
-                                They build on the quasi-periodic architecture, where computing units execute
-                                'almost
-                                periodically', by adding a thin layer of middleware that facilitates
-                                the implementation of synchronous applications.
-                              </p>
-                              <p class="abstract">
-                                We show how the deployment of a synchronous application
-                                on a quasi-periodic architecture can be modeled using a synchronous
-                                formalism.  Then we detail two protocols, Back-Pressure LTTA,
-                                reminiscent of elastic circuits, and Time-Based LTTA, based on waiting.
-                                Compared to previous work, we present controller models that can be compiled
-                                for execution and a simplified version of the Time-Based protocol.
-                                We also compare the LTTA approach with architectures based
-                                on clock synchronization.</p>
-                            </div>
-                          </div>
-                        </li>
+                  <p>
+                    Journal version of the EMSOFT'15 paper on
+                    LTTAs with and overview of
+                    the <a href="http://zelus.di.ens.fr">Zélus</a>
+                    language and two optimizations for systems
+                    using broadcast communication.
+                  </p>
 
-                      <li><strong>Loosely Time-Triggered Architectures: Improvements and Comparisons</strong>,<br>
-                    with Albert Benveniste and Timothy Bourke<br>
-                      <i>ACM Transaction on Embedded Computing Systems (TECS), Vol.15 N.4 Aug. 2016</i>
-                      <br>
-                      [ <a href="../bibtex/tecs16.html">bibtex</a>
-                      | <a href="../papers/tecs16.pdf">paper</a>
-                      | <a href="http://baudart.eu/tecs2016/">website</a> ]
+                  <div class="info-wrapper">
+                    <input type="checkbox" id="showhide4">
+                    <label for="showhide4">
+                      <div class="more">
+                        <a>Show more</a>
+                      </div>
+                      <div>
+                        <a>Show less</a>
+                      </div>
+                    </label>
+                    <div class="info">
 
-                      <p>
-                        Journal version of the EMSOFT'15 paper on
-                        LTTAs with and overview of
-                        the <a href="http://zelus.di.ens.fr">Zélus</a>
-                        language and two optimizations for systems
-                        using broadcast communication.
+                      <p class="abstract">Loosely
+                        Time-Triggered Architectures (LTTAs) are
+                        a proposal for constructing distributed
+                        embedded control systems. They build on
+                        the quasi-periodic architecture, where
+                        computing units execute 'nearly
+                        periodically', by adding a thin layer of
+                        middleware that facilitates the
+                        implementation of synchronous
+                        applications.
                       </p>
-
-                        <div class="info-wrapper">
-                          <input type="checkbox" id="showhide4">
-                            <label for="showhide4">
-                              <div class="more">
-                                <a>Show more</a>
-                              </div>
-                              <div>
-                                <a>Show less</a>
-                              </div>
-                            </label>
-                            <div class="info">
-
-                              <p class="abstract">Loosely
-                              Time-Triggered Architectures (LTTAs) are
-                              a proposal for constructing distributed
-                              embedded control systems. They build on
-                              the quasi-periodic architecture, where
-                              computing units execute 'nearly
-                              periodically', by adding a thin layer of
-                              middleware that facilitates the
-                              implementation of synchronous
-                              applications.
-                              </p>
-                              <p class="abstract">
-                                In this paper, we show how the
-                                deployment of a synchronous
-                                application on a quasi-periodic
-                                architecture can be modeled using a
-                                synchronous formalism. Then we detail
-                                two protocols, Back-Pressure LTTA,
-                                reminiscent of elastic circuits, and
-                                Time-Based LTTA, based on
-                                waiting. Compared to previous work, we
-                                present controller models that can be
-                                compiled for execution, a simplified
-                                version of the Time-Based protocol
-                                and optimizations for systems using
-                                broadcast communication. We also
-                                compare the LTTA approach with
-                                architectures based on clock
-                                synchronization.</p>
-                            </div>
-                          </div>
-                        </li>
+                      <p class="abstract">
+                        In this paper, we show how the
+                        deployment of a synchronous
+                        application on a quasi-periodic
+                        architecture can be modeled using a
+                        synchronous formalism. Then we detail
+                        two protocols, Back-Pressure LTTA,
+                        reminiscent of elastic circuits, and
+                        Time-Based LTTA, based on
+                        waiting. Compared to previous work, we
+                        present controller models that can be
+                        compiled for execution, a simplified
+                        version of the Time-Based protocol
+                        and optimizations for systems using
+                        broadcast communication. We also
+                        compare the LTTA approach with
+                        architectures based on clock
+                        synchronization.</p>
+                    </div>
+                  </div>
+                </li>
 
 
 
                 <li><strong>A Unifying View of Loosely Time-Triggered Architectures</strong>,<br>
-                    with Albert Benveniste, Anne Bouillard and Paul Caspi<br>
-                      <i>INRIA Research Report RR-8494, Mar. 2014</i>
-                      <br>
-                      [ <a href="../bibtex/rr-ltta.html">bibtex</a>
-                      | <a href="../papers/RR-LTTA.pdf">paper</a> ]
+                  with Albert Benveniste, Anne Bouillard and Paul Caspi<br>
+                  <i>INRIA Research Report RR-8494, Mar. 2014</i>
+                  <br>
+                  [ <a href="../bibtex/rr-ltta.html">bibtex</a>
+                  | <a href="../papers/RR-LTTA.pdf">paper</a> ]
 
-                      <p>
-                      This research report is a corrected version of a
-                      paper which appeared at EMSOFT'2010 with the same title.
-                      It presents the two LTTA protocols,
-                      Back-Pressure and Time-Based, in a single unified
-                      Petri-Net framework.
-                      </p>
+                  <p>
+                    This research report is a corrected version of a
+                    paper which appeared at EMSOFT'2010 with the same title.
+                    It presents the two LTTA protocols,
+                    Back-Pressure and Time-Based, in a single unified
+                    Petri-Net framework.
+                  </p>
 
-                        <div class="info-wrapper">
-                          <input type="checkbox" id="showhide3">
-                            <label for="showhide3">
-                              <div class="more">
-                                <a>Show more</a>
-                              </div>
-                              <div>
-                                <a>Show less</a>
-                              </div>
-                            </label>
-                            <div class="info">
+                  <div class="info-wrapper">
+                    <input type="checkbox" id="showhide3">
+                    <label for="showhide3">
+                      <div class="more">
+                        <a>Show more</a>
+                      </div>
+                      <div>
+                        <a>Show less</a>
+                      </div>
+                    </label>
+                    <div class="info">
 
-                              <p class="abstract">Cyber-Physical Systems require
-                              distributed architectures to support
-                              safety critical real-time
-                              control. Hermann Kopetz' Time-Triggered
-                              Architecture (TTA) has been proposed as
-                              both an architecture and a comprehensive
-                              paradigm for systems architecture, for
-                              such systems. TTA offers the programmer
-                              a logical discrete time compliant with
-                              synchronous programming, together with
-                              timing bounds. A clock synchronization
-                              protocol is required, unless the local
-                              clocks used themselves provide the
-                              recquired accuracy. To relax the strict
-                              requirements on synchronization imposed
-                              by TTA, Loosely Time-Triggered
-                              Architectures (LTTA) have been
-                              proposed. In LTTA, computation and
-                              communication units are all triggered by
-                              autonomous, unsynchronized,
-                              clocks. Communication media act as
-                              shared memories between writers and
-                              readers and communication is non
-                              blocking. This is at the price of
-                              communication artifacts (such as
-                              duplication or loss of data), which must
-                              be compensated for by using some "LTTA
-                              protocol". In this paper we pursue our
-                              previous work by providing a unified
-                              presentation of the two variants of LTTA
-                              (token- and time-based), with simplified
-                              analyses. We compare these two variants
-                              regarding performance and robustness and
-                              we provide ways to combine them.</p>
+                      <p class="abstract">Cyber-Physical Systems require
+                        distributed architectures to support
+                        safety critical real-time
+                        control. Hermann Kopetz' Time-Triggered
+                        Architecture (TTA) has been proposed as
+                        both an architecture and a comprehensive
+                        paradigm for systems architecture, for
+                        such systems. TTA offers the programmer
+                        a logical discrete time compliant with
+                        synchronous programming, together with
+                        timing bounds. A clock synchronization
+                        protocol is required, unless the local
+                        clocks used themselves provide the
+                        recquired accuracy. To relax the strict
+                        requirements on synchronization imposed
+                        by TTA, Loosely Time-Triggered
+                        Architectures (LTTA) have been
+                        proposed. In LTTA, computation and
+                        communication units are all triggered by
+                        autonomous, unsynchronized,
+                        clocks. Communication media act as
+                        shared memories between writers and
+                        readers and communication is non
+                        blocking. This is at the price of
+                        communication artifacts (such as
+                        duplication or loss of data), which must
+                        be compensated for by using some "LTTA
+                        protocol". In this paper we pursue our
+                        previous work by providing a unified
+                        presentation of the two variants of LTTA
+                        (token- and time-based), with simplified
+                        analyses. We compare these two variants
+                        regarding performance and robustness and
+                        we provide ways to combine them.</p>
 
-                              <p class="abstract">This report was prepared for a
-                              lecture in Gérard Berry's seminar series
-                              at the Collège de France, March 5, 2014;
-                              it is a corrected version of a paper,
-                              which appeared at Emsoft'2010. It is
-                              dedicated to our close friend Paul Caspi
-                              who died in April 2012.</p>
+                      <p class="abstract">This report was prepared for a
+                        lecture in Gérard Berry's seminar series
+                        at the Collège de France, March 5, 2014;
+                        it is a corrected version of a paper,
+                        which appeared at Emsoft'2010. It is
+                        dedicated to our close friend Paul Caspi
+                        who died in April 2012.</p>
 
-                            </div>
-                          </div>
-                        </li>
-</ul>
+                    </div>
+                  </div>
+                </li>
+              </ul>
 
-<section id="music">
-  <h2>Music</h2>
+              <section id="music">
+                <h2>Music</h2>
 
-<p> Before my PhD, I worked on another application of the synchronous
-approach: designing a reactive language for mixed music, that is,
-music involving both live musicians and electronic sounds.
-</p>
+                <p> Before my PhD, I worked on another application of the synchronous
+                  approach: designing a reactive language for mixed music, that is,
+                  music involving both live musicians and electronic sounds.
+                </p>
 
-<p>
-We gave a synchronous semantics to
-the <a href="http://repmus.ircam.fr/antescofo">Antescofo</a> language,
-a DSL for authoring mixed music, and an alternative implementation of
-the sequencer based on an embedding inside a synchronous
-language, <a href= "http://reactiveml.org">ReactiveML</a>. We used
-this embedding to allow live coding with Antescofo.
-</p>
+                <p>
+                  We gave a synchronous semantics to
+                  the <a href="http://repmus.ircam.fr/antescofo">Antescofo</a> language,
+                  a DSL for authoring mixed music, and an alternative implementation of
+                  the sequencer based on an embedding inside a synchronous
+                  language, <a href="http://reactiveml.org">ReactiveML</a>. We used
+                  this embedding to allow live coding with Antescofo.
+                </p>
 
-  <p>
-We published the two following papers on this topic:
-  </p>
+                <p>
+                  We published the two following papers on this topic:
+                </p>
 
-<ul>
-                  <li><strong>A Synchronous Embedding of Antescofo, a Domain-Specific Language for Interactive Mixed Music</strong>,<br>
+                <ul>
+                  <li><strong>A Synchronous Embedding of Antescofo, a Domain-Specific Language for Interactive Mixed
+                      Music</strong>,<br>
                     with Florent Jacquemard, Louis Mandel and Marc Pouzet<br>
-                        <i>International Conference on Embedded Software (EMSOFT), Sept. 2013.</i>
-                        Best paper nominee
-                      <br>
-                        [ <a href="../bibtex/emsoft13.html">bibtex</a>
-                        | <a href="../papers/emsoft13.pdf">paper</a>
-                        | <a href="http://www.reactiveml.org/emsoft13/">website</a> ]
+                    <i>International Conference on Embedded Software (EMSOFT), Sept. 2013.</i>
+                    Best paper nominee
+                    <br>
+                    [ <a href="../bibtex/emsoft13.html">bibtex</a>
+                    | <a href="../papers/emsoft13.pdf">paper</a>
+                    | <a href="http://www.reactiveml.org/emsoft13/">website</a> ]
 
 
-                        <p>
-                        This article presents a synchronous semantics
-                        for the core of the Antescofo language, a DSL
-                        for authoring mixed music, and an alternative
-                        implementation based on an embedding inside a
-                        synchronous language, ReactiveML.
-                        </p>
+                    <p>
+                      This article presents a synchronous semantics
+                      for the core of the Antescofo language, a DSL
+                      for authoring mixed music, and an alternative
+                      implementation based on an embedding inside a
+                      synchronous language, ReactiveML.
+                    </p>
 
-                        <div class="info-wrapper">
-                          <input type="checkbox" id="showhide2">
-                            <label for="showhide2">
-                              <div class="more">
-                                <a>Show more</a>
-                              </div>
-                              <div>
-                                <a>Show less</a>
-                              </div>
-                            </label>
-                            <div class="info">
+                    <div class="info-wrapper">
+                      <input type="checkbox" id="showhide2">
+                      <label for="showhide2">
+                        <div class="more">
+                          <a>Show more</a>
+                        </div>
+                        <div>
+                          <a>Show less</a>
+                        </div>
+                      </label>
+                      <div class="info">
 
-                              <p class="abstract">Antescofo is recently developed
-                                software for musical score following
-                                and mixed music: it automatically, and
-                                in real-time, synchronizes electronic
-                                instruments with a musician playing on
-                                a classical instrument. Therefore, it
-                                faces some of the same major
-                                challenges as embedded systems.</p>
+                        <p class="abstract">Antescofo is recently developed
+                          software for musical score following
+                          and mixed music: it automatically, and
+                          in real-time, synchronizes electronic
+                          instruments with a musician playing on
+                          a classical instrument. Therefore, it
+                          faces some of the same major
+                          challenges as embedded systems.</p>
 
-                              <p class="abstract">The system provides a programming
-                                language used by composers to specify
-                                musical pieces that mix interacting
-                                electronic and classical
-                                instruments. This language is
-                                developed with and for musicians and
-                                it continues to evolve according to
-                                their needs. Yet its semantics has
-                                only recently been formally
-                                defined. This paper presents a
-                                synchronous semantics for the core
-                                language of Antescofo and an
-                                alternative implementation based on an
-                                embedding inside an existing
-                                synchronous language, namely
-                                ReactiveML. The semantics reduces to a
-                                few rules, is mathematically precise
-                                and leads to an interpretor of only a
-                                few hundred lines. The efficiency of
-                                this interpretor compares well with
-                                that of the actual implementation: on
-                                all musical pieces we have tested,
-                                response times have been less than the
-                                reaction time of the human
-                                ear. Moreover, this embedding
-                                permitted the prototyping of several
-                                new programming constructs, some of
-                                which are described in this paper.</p>
-                            </div>
-                          </div>
-                        </li>
+                        <p class="abstract">The system provides a programming
+                          language used by composers to specify
+                          musical pieces that mix interacting
+                          electronic and classical
+                          instruments. This language is
+                          developed with and for musicians and
+                          it continues to evolve according to
+                          their needs. Yet its semantics has
+                          only recently been formally
+                          defined. This paper presents a
+                          synchronous semantics for the core
+                          language of Antescofo and an
+                          alternative implementation based on an
+                          embedding inside an existing
+                          synchronous language, namely
+                          ReactiveML. The semantics reduces to a
+                          few rules, is mathematically precise
+                          and leads to an interpretor of only a
+                          few hundred lines. The efficiency of
+                          this interpretor compares well with
+                          that of the actual implementation: on
+                          all musical pieces we have tested,
+                          response times have been less than the
+                          reaction time of the human
+                          ear. Moreover, this embedding
+                          permitted the prototyping of several
+                          new programming constructs, some of
+                          which are described in this paper.</p>
+                      </div>
+                    </div>
+                  </li>
 
 
                   <li><strong>Programming Mixed-Music in ReactiveML</strong>,<br>
-                      with Louis Mandel and Marc Pouzet<br>
-                        <i>Workshop on Functional Art, Music, Modeling and Design (FARM), Sept. 2013 </i>
-                        <br>
-                          [ <a href="../bibtex/farm13.html">bibtex</a>
-                          | <a href="../papers/farm13.pdf">paper</a>
-                          | <a href="http://www.reactiveml.org/farm13/">website</a> ]
+                    with Louis Mandel and Marc Pouzet<br>
+                    <i>Workshop on Functional Art, Music, Modeling and Design (FARM), Sept. 2013 </i>
+                    <br>
+                    [ <a href="../bibtex/farm13.html">bibtex</a>
+                    | <a href="../papers/farm13.pdf">paper</a>
+                    | <a href="http://www.reactiveml.org/farm13/">website</a> ]
 
-                        <p>
-                        A tutorial on how to program mixed music in
-                        ReactiveML through several examples: <i>frère
+                    <p>
+                      A tutorial on how to program mixed music in
+                      ReactiveML through several examples: <i>frère
                         Jacques</i>, a very simple musical round; live
-                        coding using the Antescofo library; and Steve
-                        Reich's <i>Piano Phase</i>.
-                        </p>
+                      coding using the Antescofo library; and Steve
+                      Reich's <i>Piano Phase</i>.
+                    </p>
 
-                          <div class="info-wrapper">
-                            <input type="checkbox" id="showhide1">
-                              <label for="showhide1">
-                                <div class="more">
-                                  <a>Show more</a>
-                                </div>
-                                <div>
-                                  <a>Show less</a>
-                                </div>
-                              </label>
-                              <div class="info">
-                                <p class="abstract">Mixed music is about live musicians
-                                  interacting with electronic parts
-                                  which are controlled by a computer
-                                  during the performance.  It allows
-                                  composers to use and combine
-                                  traditional instruments with complex
-                                  synthesized sounds and other
-                                  electronic devices.  There are
-                                  several languages dedicated to the
-                                  writing of mixed music scores. Among
-                                  them, the Antescofo language coupled
-                                  with an advanced score follower
-                                  allows a composer to manage the
-                                  reactive aspects of musical
-                                  performances: how electronic parts
-                                  interact with a musician.  However
-                                  these domain specific languages do
-                                  not offer the expressiveness of
-                                  functional programming.</p>
+                    <div class="info-wrapper">
+                      <input type="checkbox" id="showhide1">
+                      <label for="showhide1">
+                        <div class="more">
+                          <a>Show more</a>
+                        </div>
+                        <div>
+                          <a>Show less</a>
+                        </div>
+                      </label>
+                      <div class="info">
+                        <p class="abstract">Mixed music is about live musicians
+                          interacting with electronic parts
+                          which are controlled by a computer
+                          during the performance. It allows
+                          composers to use and combine
+                          traditional instruments with complex
+                          synthesized sounds and other
+                          electronic devices. There are
+                          several languages dedicated to the
+                          writing of mixed music scores. Among
+                          them, the Antescofo language coupled
+                          with an advanced score follower
+                          allows a composer to manage the
+                          reactive aspects of musical
+                          performances: how electronic parts
+                          interact with a musician. However
+                          these domain specific languages do
+                          not offer the expressiveness of
+                          functional programming.</p>
 
-                                <p class="abstract">We embed the Antescofo language in
-                                  a reactive functional programming
-                                  language, ReactiveML. This approach
-                                  offers to the composer recursion,
-                                  higher order, inductive types, as
-                                  well as a simple way to program
-                                  complex reactive behaviors thanks to
-                                  the synchronous model of concurrency
-                                  on which ReactiveML is built.  This
-                                  article presents how to program
-                                  mixed music in ReactiveML through
-                                  several examples.</p>
-                              </div>
-                            </div>
-                        </li>
-</ul>
-
-
+                        <p class="abstract">We embed the Antescofo language in
+                          a reactive functional programming
+                          language, ReactiveML. This approach
+                          offers to the composer recursion,
+                          higher order, inductive types, as
+                          well as a simple way to program
+                          complex reactive behaviors thanks to
+                          the synchronous model of concurrency
+                          on which ReactiveML is built. This
+                          article presents how to program
+                          mixed music in ReactiveML through
+                          several examples.</p>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
 
 
 
-              </div>
-                   <div class="footer">
 
-                     last update: 2016-03-17
-                   </div>
 
-    </div> <!-- Container -->
+    </div>
+    <div class="footer">
 
-  </body>
+      last update: 2016-03-17
+    </div>
+
+  </div> <!-- Container -->
+
+</body>
+
 </html>

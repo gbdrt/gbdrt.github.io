@@ -1,107 +1,109 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
 
-  <head>
-    <title>ACM TECS, LTTA</title>
-    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
+<head>
+  <title>ACM TECS, LTTA</title>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <link rel="stylesheet" href="../bootstrap.min.css" type="text/css">
-      <link rel="stylesheet" href="../style.css" type="text/css" />
-      <link rel="stylesheet" href="./style.css" type="text/css" />
-  </head>
+  <link rel="stylesheet" href="./bootstrap.min.css" type="text/css">
+  <link rel="stylesheet" href="./old-style.css" type="text/css" />
+  <link rel="stylesheet" href="./style.css" type="text/css" />
+</head>
 
-        <body>
+<body>
 
-          <div class="container-fluid">
-
-
-            <div class="content">
-
-              <section id="about">
-                <h1 align="center">Loosely Time-Triggered Architecture:<br>Improvements and Comparisons</h1>
-                <h2 align="center">Guillaume Baudart, Albert Benveniste, and Timothy Bourke</h2>
-
-                <p align="center">ACM Transation on Embedded Computing Systems, ESWEEK 2015 Special Issue, Vol. 15, N. 4, August 2016</p>
+  <div class="container-fluid">
 
 
-                <div id="menu">
-                  <div class="row ">
-                    <div class="col-sm-4">
-                      <a href="./ltta.pdf">Paper</a>
-                    </div>
-                    <div class="col-sm-4">
-                      <a href="./ltta-code.zip">Code</a>
-                    </div>
-                    <div class="col-sm-4">
-                     <a href="http://zelus.di.ens.fr/download.html">Zélus</a>
-                    </div>
-                  </div>
+    <div class="content">
+
+      <section id="about">
+        <h1 align="center">Loosely Time-Triggered Architecture:<br>Improvements and Comparisons</h1>
+        <h2 align="center">Guillaume Baudart, Albert Benveniste, and Timothy Bourke</h2>
+
+        <p align="center">ACM Transation on Embedded Computing Systems, ESWEEK 2015 Special Issue, Vol. 15, N. 4,
+          August 2016</p>
+
+
+        <div id="menu">
+          <div class="row ">
+            <div class="col-sm-4">
+              <a href="./ltta.pdf">Paper</a>
             </div>
-
-
-
-
-                <p>
-                Loosely Time-Triggered Architectures (LTTAs) are a
-                proposal for constructing distributed embedded control
-                systems.  They build on the quasi-periodic
-                architecture, where computing units execute
-                'nearly periodically', by adding a thin layer of
-                middleware that facilitates the implementation of
-                synchronous applications.
-                </p>
-
-                <p>
-                In this paper, we show how the deployment of a
-                synchronous application on a quasi-periodic
-                architecture can be modeled using a synchronous
-                formalism.  Then we detail two protocols,
-                'Back-Pressure' LTTA, reminiscent of elastic
-                circuits, and 'Time-Based' LTTA, based on
-                waiting.  Compared to previous work, we present
-                controller models that can be compiled for execution,
-                a simplified version of the Time-Based protocol and
-                optimizations for systems using broadcast
-                communication.  We also compare the LTTA approach with
-                architectures based on clock synchronization.
-                </p>
-
-
-
-                  <p>
-                    <ul>
-                      <li> You can find here the submitted paper, and the associated zélus code.</li>
-                      <li> Note that <b>it
-                      requires <a href="https://zelus.di.ens.fr/download.html">zélus</a>
-                      (version 1.2.0 or higher)</b>.</li>
-                      <li> To compile, just change the path to the zélus directory in the Makefile.</li>
-                    </ul>
-                  </p>
-
-
-                   <p align="center">
-                     <img src="ltta.png" alt="LTTA nodes" width="60%">
-                   </p>
-                   <p class="caption">
-                     Figure: Schema of an LTTA node: At
-                     instants determined by the
-                     protocol, the controller
-                     samples a list of inputs to
-                     triggers the embedded machine,
-                     and controls the publication of
-                     the output.
-                   </p>
-
-
+            <div class="col-sm-4">
+              <a href="./ltta-code.zip">Code</a>
             </div>
-                   <div class="footer">
+            <div class="col-sm-4">
+              <a href="http://zelus.di.ens.fr/download.html">Zélus</a>
+            </div>
+          </div>
+        </div>
 
-                     last update: 2016-27-04
-                   </div>
 
-    </div> <!-- Container -->
 
-  </body>
+
+        <p>
+          Loosely Time-Triggered Architectures (LTTAs) are a
+          proposal for constructing distributed embedded control
+          systems. They build on the quasi-periodic
+          architecture, where computing units execute
+          'nearly periodically', by adding a thin layer of
+          middleware that facilitates the implementation of
+          synchronous applications.
+        </p>
+
+        <p>
+          In this paper, we show how the deployment of a
+          synchronous application on a quasi-periodic
+          architecture can be modeled using a synchronous
+          formalism. Then we detail two protocols,
+          'Back-Pressure' LTTA, reminiscent of elastic
+          circuits, and 'Time-Based' LTTA, based on
+          waiting. Compared to previous work, we present
+          controller models that can be compiled for execution,
+          a simplified version of the Time-Based protocol and
+          optimizations for systems using broadcast
+          communication. We also compare the LTTA approach with
+          architectures based on clock synchronization.
+        </p>
+
+
+
+        <p>
+          <ul>
+            <li> You can find here the submitted paper, and the associated zélus code.</li>
+            <li> Note that <b>it
+                requires <a href="https://zelus.di.ens.fr/download.html">zélus</a>
+                (version 1.2.0 or higher)</b>.</li>
+            <li> To compile, just change the path to the zélus directory in the Makefile.</li>
+          </ul>
+        </p>
+
+
+        <p align="center">
+          <img src="ltta.png" alt="LTTA nodes" width="60%">
+        </p>
+        <p class="caption">
+          Figure: Schema of an LTTA node: At
+          instants determined by the
+          protocol, the controller
+          samples a list of inputs to
+          triggers the embedded machine,
+          and controls the publication of
+          the output.
+        </p>
+
+
+    </div>
+    <div class="footer">
+
+      last update: 2016-27-04
+    </div>
+
+  </div> <!-- Container -->
+
+</body>
+
 </html>

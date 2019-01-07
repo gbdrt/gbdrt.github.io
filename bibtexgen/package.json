@@ -1,0 +1,13 @@
+{
+  "name": "bibtexgen",
+  "version": "1.0.0",
+  "description": "Generate website from bibtex",
+  "main": "bibtexgen.js",
+  "scripts": {
+    "test": "node bibtexgen.js"
+  },
+  "author": "Guillaume Baudart",
+  "dependencies": {
+    "bibtex-parse-js": "0.0.24"
+  }
+}

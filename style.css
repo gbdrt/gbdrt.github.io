@@ -3,8 +3,6 @@
 body {
     font-family: "Helvetica Neue", HelveticaNeue, "Open Sans", OpenSans, Arial, Helvetica, sans-serif;
     Font-weight: 300;
-    background-color: #dddddd;
-    line-height: 1.625;
 }
 
 .container-fluid {
@@ -13,34 +11,35 @@ body {
     text-align: left;
     text-width: 100%;
     max-width: 900px;
-    border: 1px solid #959596;
+    margin-left: 15%;
 }
 
 .content {
     float: center;
-    padding-left: 5%;
-    padding-right: 5%;
-    margin-top: 0px;
     width: 100%;
+    font-size:1.2em;
     text-align: justify;
+    margin-top: 2em;
 }
 
 
 h1 {
     font-size:2.5em;
-    padding-top: 1.2em;
-    font-weight: 1000;
+    Font-weight: 300;
 }
 
 h2 {
-    font-size:1.5em;
-    font-weight:800;
-    padding-top: 1.2em;
+    font-size:1.7em;
+    Font-weight: 300;
+}
+
+section {
+    padding-bottom: 1em;
 }
 
 a {
     background-color: #ffffff;
-    color: #1982d1;
+    color: #2A5DB0;
     text-decoration: none;
 }
 
@@ -48,186 +47,28 @@ a:hover {
     text-decoration: underline;
 }
 
+.header h1 {
+    padding-top:1.5em;
+}
 
-li {
-    margin-left: -1.5em;
+.header h2 {
+    margin-top:0;
+}
+
+.header p {
     padding-top: 1em;
+    font-size: 1.2em;
+    font-style: oblique;
 }
-
-
-ol {
-    list-style: none;
-}
-ol > li {
-    position: relative;
-}
-ol > li:before {
-    counter-increment: c -1;
-    content: "[" counter(c) "] ";
-    position: absolute;
-    left: -1.5em;
-}
-
-
-/* BOOTSTRAP GRID HACK */
-
-.contact { padding-left:1em; margin-bottom: 1em; }
-
-.teaching {
-    margin-bottom: 1em;
-    text-align: left;
-}
-
-
-/* HEADER, FOOTER */
-
-.wrapper {
-  width: 100%;
-  position: relative;
-}
-
-.wrapper img {
-  display: block;
-  max-width:100%;
-}
-
-.wrapper .overlay {
-  position: absolute;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  color:white;
-  padding-left:5%;
-}
-
-.wrapper .overlay a {
-    color: white;
-}
-
-.wrapper .overlay a:hover {
-    text-decoration: none;
-}
-
-.wrapper .overlay h1 {
-    font-weight: 500;
-    font-size: 3em;
-}
-
-.wrapper .overlay h2 {
-    font-weight: 400;
-    font-size: 1.5em;
-}
-
-.footer {
-    clear: right;
-    font-size: 0.7em;
-    padding-top: 2em;
-    text-align: right;
-    max-width: 100%;
-}
-
-
-/* ANIMATION ABSTRACT */
-
-.info-wrapper {
-        height: auto;
-        width: 97.5%;
-        margin-bottom: 0;
-        margin-top:0;
-        padding: 0 0 2em 0;
-        position: relative;
-}
-
-.info {
-        max-height: 0em;
-        height: auto;
-        padding: 0 0 0 0;
-        overflow: hidden;
-        position: relative;
-        transition: 0.5s;
-}
-
-.info-wrapper input[type=checkbox] {
-        display: none;
-}
-.info-wrapper label {
-        bottom: 0.5em;
-        width: 15em;
-        height: 1.5em;
-        overflow: hidden;
-        position: absolute;
-        font-weight: 300;
-        text-align: left;
-        color: #1982d1;
-        cursor: pointer;
-}
-
-.info-wrapper label .more {
-    margin: 0 -2em 0 0;
-    transition: 0s;
-}
-
-.info-wrapper input[type=checkbox]:checked ~ .info {
-        max-height: 100em;
-}
-
-.info-wrapper input[type=checkbox]:checked +label .more {
-        margin-top: -1.5em;
-}
-
-p.abstract {
-    font-size: 0.9em;
-    padding-left:3%;
-    padding-right:3%
-}
-
-
 /* HACK FOR MOBILE */
 
 @media (max-width: 700px) {
     .content {
         text-align: left;
     }
-
-
-    .wrapper .overlay h1 {
-        font-size: 2em;
-        margin-bottom:0;
-    }
-
-    .wrapper .overlay h2 {
-        font-size: 1.2em;
-        margin-top: 0;
-    }
-
 }
-
-
-@media (max-width: 460px) {
-
-    .wrapper .overlay h1 {
-        font-size: 1.4em;
-        margin-bottom:0;
-        margin-top: 0;
-    }
-
-    .wrapper .overlay h2 {
-        font-size: 1em;
-        margin-top: 0;
-        margin-bottom:0;
-    }
-
-}
-
 
 @media (max-width: 315px) {
-    .wrapper .overlay {
-        position: relative;
-        color:black;
-        padding-left:5%;
-    }
-
     .content {
         padding-left: 0;
         padding-right: 0;
