@@ -33,6 +33,11 @@ h2 {
     Font-weight: 300;
 }
 
+h3 {
+    font-size:1.5em;
+    Font-weight: 300;
+}
+
 section {
     padding-bottom: 1em;
 }
@@ -46,6 +51,24 @@ a {
 a:hover {
     text-decoration: underline;
 }
+
+/* BIBLIO */
+
+.bibitem {
+    margin-bottom: 1em;
+}
+
+.title {
+    Font-weight: 400;
+}
+
+.desc {
+    font-style: oblique;
+}
+
+
+
+/* HEADER */
 
 .header h1 {
     padding-top:1.5em;

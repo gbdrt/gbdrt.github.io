@@ -8,6 +8,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
+  <script>
+    function includeHTML() {
+      var z, i, elmnt, file, xhttp;
+      /* Loop through a collection of all HTML elements: */
+      z = document.getElementsByTagName("*");
+      for (i = 0; i < z.length; i++) {
+        elmnt = z[i];
+        /*search for elements with a certain atrribute:*/
+        file = elmnt.getAttribute("w3-include-html");
+        if (file) {
+          /* Make an HTTP request using the attribute value as the file name: */
+          xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function () {
+            if (this.readyState == 4) {
+              if (this.status == 200) { elmnt.innerHTML = this.responseText; }
+              if (this.status == 404) { elmnt.innerHTML = "Page not found."; }
+              /* Remove the attribute, and call this function once more: */
+              elmnt.removeAttribute("w3-include-html");
+              includeHTML();
+            }
+          }
+          xhttp.open("GET", file, true);
+          xhttp.send();
+          /* Exit the function: */
+          return;
+        }
+      }
+    }
+  </script>
+
   <link rel="stylesheet" href="bootstrap.min.css" type="text/css">
   <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -34,14 +64,25 @@
         <p>
           I received my PhD from École normale supérieure (ENS) in Paris under
           the supervision of <a href="http://www.di.ens.fr/~pouzet/">Marc Pouzet</a> and <a href="http://tbrk.org/">Timothy
-            Bourke</a>. My dissertation <a href="./thesis/index.html">"A synchronous approach to quasi-periodic
-            systems"</a> was awarded the 2017 ACM
+            Bourke</a>. My dissertation <a href="./thesis/index.html"><span class='title'>A synchronous approach to
+              quasi-periodic
+              systems</span></a> was awarded the 2017 ACM
           SIGBED Paul Caspi Memorial Dissertation Award.
         </p>
       </section>
 
+      <section class="publications">
+        <h3>Publications</h3>
+        <div w3-include-html="publications.html"></div>
+      </section>
+
+
     </div> <!-- Container -->
 
 </body>
+
+<script>
+  includeHTML();
+</script>
 
 </html>
