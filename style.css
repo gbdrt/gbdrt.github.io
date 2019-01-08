@@ -89,6 +89,9 @@ a:hover {
     .content {
         text-align: left;
     }
+    .container-fluid {
+        margin-left: 5%;
+    }
 }
 
 @media (max-width: 315px) {
