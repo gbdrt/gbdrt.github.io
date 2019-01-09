@@ -9,9 +9,10 @@ body {
     background-color: #fff;
     color: #000000;
     text-align: left;
-    text-width: 100%;
     max-width: 900px;
     margin-left: 15%;
+    margin-right: 15%;
+
 }
 
 .content {
@@ -30,11 +31,6 @@ h1 {
 
 h2 {
     font-size:1.7em;
-    Font-weight: 300;
-}
-
-h3 {
-    font-size:1.5em;
     Font-weight: 300;
 }
 
@@ -70,8 +66,8 @@ a:hover {
 
 /* HEADER */
 
-.header h1 {
-    padding-top:1.5em;
+.header {
+    padding-top:2.5em;
 }
 
 .header h2 {
@@ -85,25 +81,19 @@ a:hover {
 }
 /* HACK FOR MOBILE */
 
+@media (max-width: 1200px) {
+    .container-fluid {
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+}
+
 @media (max-width: 700px) {
     .content {
         text-align: left;
     }
     .container-fluid {
         margin-left: 5%;
-    }
-}
-
-@media (max-width: 315px) {
-    .content {
-        padding-left: 0;
-        padding-right: 0;
-    }
-}
-
-
-@media (max-width: 150px) {
-    .content {
-        font-size:0.9em;
+        margin-right: 5%;
     }
 }
