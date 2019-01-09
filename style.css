@@ -40,8 +40,9 @@ section {
 
 a {
     background-color: #ffffff;
-    color: #2A5DB0;
+    color: #000000;
     text-decoration: none;
+    Font-weight: 400;
 }
 
 a:hover {

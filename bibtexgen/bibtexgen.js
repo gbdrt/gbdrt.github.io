@@ -12,6 +12,13 @@ const html = (type, style, body) => {
     return content
 }
 
+const link = (file, url, body) => {
+    var content = ''
+    var target = file ? file : (url ? url : '')
+    content += '<a href="' + target + '">' + body + '</a>'
+    return content
+}
+
 const cleansort = bib => {
     var res = {}
     bib.forEach(elem => {
@@ -37,14 +44,14 @@ Object.keys(sortbib).sort((a, b) => { return b - a }).forEach(year => {
     var body = ''
     sortbib[year].forEach(entry => {
         var list = ""
-        list += html('div', 'title', entry.title + ",")
-        list += html('span', 'author', entry.author)
+        list += html('div', 'title', link(entry.file, entry.url, entry.title) + ",")
+        list += html('span', 'author', entry.author).replace(/ and /g, ", ")
         if (entry.bibtype === 'inproceedings' || entry.bibtype === 'incollection') {
             list += html('span', 'desc', ' in ' + entry.booktitle)
         } else if (entry.bibtype === 'article') {
-            list += html('span', 'desc', ' in ' + entry.journal + ' ' + entry.volume + '(' + entry.number + ')')
+            list += html('span', 'desc', ' in ' + entry.journal + '&nbsp;' + entry.volume + '(' + entry.number + ')')
         } else if (entry.bibtype === 'techreport') {
-            list += html('span', 'desc', entry.type + " " + entry.number)
+            list += html('span', 'desc', entry.type + " " + entry.institution + "&nbsp;" + entry.number)
         } else if (entry.bibtype === 'phdthesis') {
             list += html('span', 'desc', "PhD Thesis")
         }
