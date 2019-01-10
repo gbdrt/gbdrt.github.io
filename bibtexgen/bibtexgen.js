@@ -26,7 +26,7 @@ const cleansort = bib => {
         entry.bibtype = elem.entryType.toLowerCase()
         year = parseInt(entry.year)
         if (res[year]) {
-            res[year].push(entry)
+            res[year].unshift(entry)
         } else {
             res[year] = [entry]
         }
