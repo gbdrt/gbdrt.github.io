@@ -49,6 +49,8 @@ const dump = (sortbib) => {
                 list += html('span', 'desc', ' in ' + entry.booktitle)
             } else if (entry.bibtype === 'article') {
                 list += html('span', 'desc', ' in ' + entry.journal + '&nbsp;' + entry.volume + '(' + entry.number + ')')
+            } else if (entry.bibtype === 'incollection') {
+                list += html('span', 'desc', ' in ' + entry.booktitle)
             } else if (entry.bibtype === 'techreport') {
                 list += html('span', 'desc', entry.type + " " + entry.institution + "&nbsp;" + entry.number)
             } else if (entry.bibtype === 'phdthesis') {
@@ -67,7 +69,7 @@ const dump = (sortbib) => {
 
 const file = fs.readFileSync(process.argv[2], "utf8");
 var bib = bibtexParse.toJSON(file);
-var sortbib = cleansort(bib, ['inproceedings', 'article', 'phdthesis'])
+var sortbib = cleansort(bib, ['inproceedings', 'article', 'phdthesis', 'incollection'])
 console.log('<h2> Publications </h2>')
 dump(sortbib)
 
