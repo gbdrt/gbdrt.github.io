@@ -19,12 +19,12 @@ const link = (file, url, body) => {
     return content
 }
 
-const cleansort = bib => {
+const cleansort = (bib, kinds) => {
     var res = {}
     bib.forEach(elem => {
         const entry = elem.entryTags
         entry.bibtype = elem.entryType.toLowerCase()
-        if (!['misc'].includes(entry.bibtype)) {
+        if (kinds.includes(entry.bibtype)) {
             year = parseInt(entry.year)
             if (res[year]) {
                 res[year].unshift(entry)
@@ -36,34 +36,42 @@ const cleansort = bib => {
     return res
 }
 
+const dump = (sortbib) => {
+    Object.keys(sortbib).sort((a, b) => { return b - a }).forEach(year => {
+        var content = ''
+        content += html('div', "col-sm-1", year)
+        var body = ''
+        sortbib[year].forEach(entry => {
+            var list = ""
+            list += html('div', 'title', link(entry.file, entry.url, entry.title) + ",")
+            list += html('span', 'author', entry.author).replace(/ and /g, ", ")
+            if (entry.bibtype === 'inproceedings' || entry.bibtype === 'incollection') {
+                list += html('span', 'desc', ' in ' + entry.booktitle)
+            } else if (entry.bibtype === 'article') {
+                list += html('span', 'desc', ' in ' + entry.journal + '&nbsp;' + entry.volume + '(' + entry.number + ')')
+            } else if (entry.bibtype === 'techreport') {
+                list += html('span', 'desc', entry.type + " " + entry.institution + "&nbsp;" + entry.number)
+            } else if (entry.bibtype === 'phdthesis') {
+                list += html('span', 'desc', "PhD Thesis")
+            }
+            if (entry.note) {
+                list += html('div', 'note', entry.note)
+            }
+            body += html('div', 'bibitem', list)
+        })
+        content += html('div', "col-sm-11", body)
+        content = html('div', "row contact", content)
+        console.log(content)
+    })
+}
+
 const file = fs.readFileSync(process.argv[2], "utf8");
 var bib = bibtexParse.toJSON(file);
-var sortbib = cleansort(bib)
+var sortbib = cleansort(bib, ['inproceedings', 'article', 'phdthesis'])
+console.log('<h2> Publications </h2>')
+dump(sortbib)
 
-Object.keys(sortbib).sort((a, b) => { return b - a }).forEach(year => {
-    var content = ''
-    content += html('div', "col-sm-1", year)
-    var body = ''
-    sortbib[year].forEach(entry => {
-        var list = ""
-        list += html('div', 'title', link(entry.file, entry.url, entry.title) + ",")
-        list += html('span', 'author', entry.author).replace(/ and /g, ", ")
-        if (entry.bibtype === 'inproceedings' || entry.bibtype === 'incollection') {
-            list += html('span', 'desc', ' in ' + entry.booktitle)
-        } else if (entry.bibtype === 'article') {
-            list += html('span', 'desc', ' in ' + entry.journal + '&nbsp;' + entry.volume + '(' + entry.number + ')')
-        } else if (entry.bibtype === 'techreport') {
-            list += html('span', 'desc', entry.type + " " + entry.institution + "&nbsp;" + entry.number)
-        } else if (entry.bibtype === 'phdthesis') {
-            list += html('span', 'desc', "PhD Thesis")
-        }
-        if (entry.note) {
-            list += html('div', 'note', entry.note)
-        }
-        body += html('div', 'bibitem', list)
-    })
-    content += html('div', "col-sm-11", body)
-    content = html('div', "row contact", content)
-    console.log(content)
-})
+var sortbib_draft = cleansort(bib, ['techreport'])
+console.log('<h2> Drafts </h2>')
+dump(sortbib_draft)
 
