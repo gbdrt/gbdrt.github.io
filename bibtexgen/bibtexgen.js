@@ -24,11 +24,13 @@ const cleansort = bib => {
     bib.forEach(elem => {
         const entry = elem.entryTags
         entry.bibtype = elem.entryType.toLowerCase()
-        year = parseInt(entry.year)
-        if (res[year]) {
-            res[year].unshift(entry)
-        } else {
-            res[year] = [entry]
+        if (!['misc'].includes(entry.bibtype)) {
+            year = parseInt(entry.year)
+            if (res[year]) {
+                res[year].unshift(entry)
+            } else {
+                res[year] = [entry]
+            }
         }
     })
     return res
