@@ -45,12 +45,12 @@ const dump = (sortbib) => {
             var list = ""
             list += html('div', 'title', link(entry.file, entry.url, entry.title) + ",")
             list += html('span', 'author', entry.author).replace(/ and /g, ", ")
-            if (entry.bibtype === 'inproceedings' || entry.bibtype === 'incollection') {
+            if (entry.bibtype === 'inproceedings' || entry.bibtype === 'incollection' || entry.bibtype === 'unpublished') {
+                list += html('span', 'desc', ' in ' + entry.booktitle)
+            } else if (entry.bibtype === 'unpublished') {
                 list += html('span', 'desc', ' in ' + entry.booktitle)
             } else if (entry.bibtype === 'article') {
                 list += html('span', 'desc', ' in ' + entry.journal + '&nbsp;' + entry.volume + '(' + entry.number + ')')
-            } else if (entry.bibtype === 'incollection') {
-                list += html('span', 'desc', ' in ' + entry.booktitle)
             } else if (entry.bibtype === 'techreport') {
                 list += html('span', 'desc', entry.type + " " + entry.institution + "&nbsp;" + entry.number)
             } else if (entry.bibtype === 'phdthesis') {
