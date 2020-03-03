@@ -73,7 +73,7 @@ var sortbib = cleansort(bib, ['inproceedings', 'article', 'phdthesis', 'incollec
 console.log('<h2> Publications </h2>')
 dump(sortbib)
 
-var sortbib_draft = cleansort(bib, ['techreport'])
-console.log('<h2> Drafts </h2>')
+var sortbib_draft = cleansort(bib, ['techreport', 'unpublished'])
+console.log('<h2> Drafts, Posters </h2>')
 dump(sortbib_draft)
 
