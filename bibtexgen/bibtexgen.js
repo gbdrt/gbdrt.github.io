@@ -76,4 +76,3 @@ dump(sortbib)
 var sortbib_draft = cleansort(bib, ['techreport', 'unpublished'])
 console.log('<h2> Drafts, Posters </h2>')
 dump(sortbib_draft)
-

@@ -1,7 +1,7 @@
 {
   "name": "bibtexgen",
   "version": "1.0.0",
-  "description": "Generate website from bibtex",
+  "description": "Generate html from bibtex",
   "main": "bibtexgen.js",
   "scripts": {
     "test": "node bibtexgen.js"
