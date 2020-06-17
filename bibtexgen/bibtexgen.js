@@ -74,13 +74,13 @@ const dump = (sortbib) => {
 
 const file = fs.readFileSync(process.argv[2], "utf8");
 var bib = bibtexParse.toJSON(file);
-var sortbib = cleansort(bib, ['inproceedings', 'article', 'phdthesis', 'inbook'])
+var sortbib = cleansort(bib, ['inproceedings', 'article', 'phdthesis', 'inbook', 'incollection'])
 console.log('<h2> Publications </h2>')
 dump(sortbib)
 
-var sortbib_wks = cleansort(bib, ['incollection'])
-console.log('<h2> Workshops </h2>')
-dump(sortbib_wks)
+// var sortbib_wks = cleansort(bib, ['incollection'])
+// console.log('<h2> Workshops </h2>')
+// dump(sortbib_wks)
 
 var sortbib_draft = cleansort(bib, ['techreport', 'unpublished'])
 console.log('<h2> Drafts, Posters </h2>')
