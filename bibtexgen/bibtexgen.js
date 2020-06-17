@@ -43,7 +43,12 @@ const dump = (sortbib) => {
         var body = ''
         sortbib[year].forEach(entry => {
             var list = ""
-            list += html('div', 'title', link(entry.file, entry.url, entry.title) + ",")
+            if (entry.bibtype !== 'inbook') {
+                list += html('div', 'title', link(entry.file, entry.url, entry.title) + ",")
+            } else {
+                list += html('div', 'title', link(entry.file, entry.url, entry.chapter) + ",")
+            }
+
             list += html('span', 'author', entry.author).replace(/ and /g, ", ")
             if (entry.bibtype === 'inproceedings' || entry.bibtype === 'incollection' || entry.bibtype === 'unpublished') {
                 list += html('span', 'desc', ' in ' + entry.booktitle)
