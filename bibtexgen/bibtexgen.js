@@ -47,8 +47,8 @@ const dump = (sortbib) => {
             list += html('span', 'author', entry.author).replace(/ and /g, ", ")
             if (entry.bibtype === 'inproceedings' || entry.bibtype === 'incollection' || entry.bibtype === 'unpublished') {
                 list += html('span', 'desc', ' in ' + entry.booktitle)
-            } else if (entry.bibtype === 'unpublished') {
-                list += html('span', 'desc', ' in ' + entry.booktitle)
+            } else if (entry.bibtype === 'inbook') {
+                list += html('span', 'desc', ' in ' + entry.title)
             } else if (entry.bibtype === 'article') {
                 list += html('span', 'desc', ' in ' + entry.journal + '&nbsp;' + entry.volume + '(' + entry.number + ')')
             } else if (entry.bibtype === 'techreport') {
@@ -69,9 +69,13 @@ const dump = (sortbib) => {
 
 const file = fs.readFileSync(process.argv[2], "utf8");
 var bib = bibtexParse.toJSON(file);
-var sortbib = cleansort(bib, ['inproceedings', 'article', 'phdthesis', 'incollection'])
+var sortbib = cleansort(bib, ['inproceedings', 'article', 'phdthesis', 'inbook'])
 console.log('<h2> Publications </h2>')
 dump(sortbib)
+
+var sortbib_wks = cleansort(bib, ['incollection'])
+console.log('<h2> Workshops </h2>')
+dump(sortbib_wks)
 
 var sortbib_draft = cleansort(bib, ['techreport', 'unpublished'])
 console.log('<h2> Drafts, Posters </h2>')
