@@ -6,12 +6,6 @@ body {
 }
 
 .container-fluid {
-    /* background-color: #fff;
-    color: #000000;
-    text-align: left; */
-    /* max-width: 900px; */
-    /* margin-left: 15%;
-    padding-right: 15%; */
     max-width: 900px;
     margin-right: auto;
     margin-left: auto;
@@ -94,26 +88,27 @@ a:hover {
 
 /* HACK FOR MOBILE */
 
-@media (max-width: 1200px) {
+@media (max-width: 900px) {
     .container-fluid {
         padding-right: 5em;
         padding-left: 5em;
-    }
-}
-
-@media (max-width: 766px) {
-    /* .header {
-        padding-top:2.5em;
-    } */
-
-    .header img {
-        float: none;
     }
 
     body {
         font-size: 12px;
     }
-    
+}
+
+@media (max-width: 766px) {
+    .container-fluid {
+        padding-right: 3em;
+        padding-left: 3em;
+    }
+
+    .header img {
+        float: none;
+    }
+
     .content {
         text-align: left;
     }
