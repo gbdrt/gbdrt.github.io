@@ -83,5 +83,5 @@ dump(sortbib)
 // dump(sortbib_wks)
 
 var sortbib_draft = cleansort(bib, ['techreport', 'unpublished'])
-console.log('<h2> Posters, Pre-Prints </h2>')
+console.log('<h2> Posters, Preprints </h2>')
 dump(sortbib_draft)
