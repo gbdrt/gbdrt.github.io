@@ -49,6 +49,12 @@ a:hover {
     text-decoration: underline;
 }
 
+.hs { 
+    /* display: inline-block; 
+    width: 6em;  */
+    Font-weight: 400;
+}
+
 /* BIBLIO */
 
 .bibitem {
