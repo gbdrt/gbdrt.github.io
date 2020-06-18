@@ -107,7 +107,6 @@ a:hover {
     } */
 
     .header img {
-        padding-top: 1em;
         float: none;
     }
 
@@ -118,4 +117,5 @@ a:hover {
     .content {
         text-align: left;
     }
+
 }
