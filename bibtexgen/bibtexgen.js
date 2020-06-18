@@ -67,7 +67,7 @@ const dump = (sortbib) => {
             body += html('div', 'bibitem', list)
         })
         content += html('div', "col-sm-11", body)
-        content = html('div', "row contact", content)
+        content = html('div', "row", content)
         console.log(content)
     })
 }
@@ -78,9 +78,9 @@ var sortbib = cleansort(bib, ['inproceedings', 'article', 'phdthesis', 'inbook',
 console.log('<h2> Publications </h2>')
 dump(sortbib)
 
-// var sortbib_wks = cleansort(bib, ['incollection'])
-// console.log('<h2> Workshops </h2>')
-// dump(sortbib_wks)
+var sortbib_patent = cleansort(bib, ['misc'])
+console.log('<h2> Patents </h2>')
+dump(sortbib_patent)
 
 var sortbib_draft = cleansort(bib, ['techreport', 'unpublished'])
 console.log('<h2> Posters, Preprints </h2>')
