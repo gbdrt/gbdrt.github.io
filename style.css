@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
-/* GENERAL */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;1,300;1,400&display=swap');
 
+/* GENERAL */
 body {
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
@@ -22,7 +22,6 @@ body {
     text-align: justify;
     margin-top: 2em;
 }
-
 
 h1 {
     font-size:2.5em;
@@ -54,7 +53,6 @@ a:hover {
 }
 
 /* BIBLIO */
-
 .bibitem {
     margin-bottom: 1em;
 }
@@ -64,15 +62,13 @@ a:hover {
 }
 
 .desc {
-    font-style: oblique;
+    font-style: italic;
 }
 
 /* HEADER */
-
 .header {
     padding-top:4em;
 }
-
 
 .header h2 {
     margin-top:0;
@@ -81,7 +77,7 @@ a:hover {
 .header p {
     padding-top: 1em;
     font-size: 1.2em;
-    font-style: oblique;
+    font-style: italic;
 }
 
 .header img {
@@ -90,7 +86,6 @@ a:hover {
 }
 
 /* HACK FOR MOBILE */
-
 @media (max-width: 900px) {
     .container-fluid {
         padding-right: 5em;
@@ -108,12 +103,11 @@ a:hover {
         padding-left: 3em;
     }
 
-    .header img {
-        float: none;
-    }
-
     .content {
         text-align: left;
     }
 
+    .header img {
+        float: none;
+    }
 }
