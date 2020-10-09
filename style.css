@@ -29,12 +29,9 @@ h1 {
 }
 
 h2 {
+    padding-top: 1em;
     font-size:1.7em;
     font-weight: 300;
-}
-
-section {
-    padding-bottom: 1em;
 }
 
 a {
