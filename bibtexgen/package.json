@@ -8,8 +8,8 @@
   },
   "author": "Guillaume Baudart",
   "dependencies": {
-    "lodash": ">=4.17.19",
+    "bibtex-parse-js": "^0.0.23",
     "braces": ">=3.0.0",
-    "bibtex-parse-js": ">=0.0.24"
+    "lodash": ">=4.17.19"
   }
 }
