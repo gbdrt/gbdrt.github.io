@@ -83,6 +83,17 @@ a:hover {
     float: right;
 }
 
+ul.a {
+    list-style-type: square;
+    list-style-position: inside;
+    padding-left: 0;
+}
+
+li::marker {
+    color: rgb(218, 218, 218);
+    content: square;
+}
+
 /* HACK FOR MOBILE */
 @media (max-width: 900px) {
     .container-fluid {
