@@ -83,5 +83,5 @@ console.log('<h2> Patents </h2>')
 dump(sortbib_patent)
 
 var sortbib_draft = cleansort(bib, ['techreport', 'unpublished'])
-console.log('<h2> Posters, Preprints </h2>')
+console.log('<h2> Preprints, Work in Progress </h2>')
 dump(sortbib_draft)
