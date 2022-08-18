@@ -76,7 +76,7 @@ const file = fs.readFileSync(process.argv[2], "utf8");
 var bib = bibtexParse.toJSON(file);
 var sortbib = cleansort(bib, ['inproceedings', 'article', 'phdthesis', 'inbook', 'incollection', 'misc'])
 console.log('<h2> Publications </h2>')
-console.log('<a href="https://dblp.org/pid/137/3096.html">DBLP</> <a href="https://scholar.google.com/citations?user=8A29HxcAAAAJ">Google Scholar</>')
+console.log('<p>See also <a href="https://dblp.org/pid/137/3096.html">DBLP</a> or <a href="https://scholar.google.com/citations?user=8A29HxcAAAAJ">Google Scholar</a></p>')
 dump(sortbib)
 
 // var sortbib_patent = cleansort(bib, ['misc'])
