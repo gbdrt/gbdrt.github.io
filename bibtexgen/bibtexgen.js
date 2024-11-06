@@ -75,7 +75,7 @@ const dump = (sortbib) => {
 const file = fs.readFileSync(process.argv[2], "utf8");
 var bib = bibtexParse.toJSON(file);
 var sortbib = cleansort(bib, ['inproceedings', 'article', 'phdthesis', 'inbook', 'incollection', 'misc'])
-console.log('<h2> Publications </h2>')
+console.log('<h2> Selected Publications </h2>')
 console.log('<p>See also <a href="https://dblp.org/pid/137/3096.html">DBLP</a> or <a href="https://scholar.google.com/citations?user=8A29HxcAAAAJ">Google Scholar</a></p>')
 dump(sortbib)
 
