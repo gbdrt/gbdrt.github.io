@@ -16,19 +16,19 @@ body {
 .content {
     float: center;
     width: 100%;
-    font-size:1.2em;
+    font-size: 1.2em;
     text-align: justify;
     margin-top: 2em;
 }
 
 h1 {
-    font-size:2.5em;
+    font-size: 2.5em;
     font-weight: 300;
 }
 
 h2 {
     padding-top: 1em;
-    font-size:1.7em;
+    font-size: 1.7em;
     font-weight: 300;
 }
 
@@ -43,7 +43,7 @@ a:hover {
     text-decoration: underline;
 }
 
-.hs { 
+.hs {
     font-weight: 400;
 }
 
@@ -60,14 +60,18 @@ a:hover {
     font-style: italic;
 }
 
+.note {
+    font-style: italic;
+}
+
 /* HEADER */
 .header {
-    padding-top:4em;
+    padding-top: 4em;
 }
 
 .header h2 {
-    margin-top:0;
-    padding-top:0;
+    margin-top: 0;
+    padding-top: 0;
 }
 
 .header p {
@@ -77,7 +81,7 @@ a:hover {
 }
 
 .header img {
-    width:150px;
+    width: 150px;
     float: right;
 }
 
