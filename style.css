@@ -96,6 +96,33 @@ li::marker {
     content: square;
 }
 
+/* NEWS */
+ul.news {
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+    border-left: 3px solid rgb(218, 218, 218);
+    font-size: 0.9em;
+}
+
+ul.news li {
+    display: flex;
+    align-items: baseline;
+    gap: 1.2em;
+    padding: 0.35em 0 0.35em 1.2em;
+}
+
+ul.news li span:last-child {
+    font-style: italic;
+}
+
+.news-date {
+    font-weight: 400;
+    color: #0C5280;
+    white-space: nowrap;
+    min-width: 5.5em;
+}
+
 /* HACK FOR MOBILE */
 @media (max-width: 900px) {
     .container-fluid {
@@ -120,5 +147,14 @@ li::marker {
 
     .header img {
         float: none;
+    }
+
+    ul.news li {
+        flex-direction: column;
+        gap: 0.1em;
+    }
+
+    .news-date {
+        min-width: 0;
     }
 }

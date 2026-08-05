@@ -42,20 +42,39 @@
     <div class="content">
       <section id="about">
         <p>
-          I am a researcher at <a href="https://www.inria.fr/fr">Inria</a> in the <a
+          I am a researcher at <a href="https://www.inria.fr/en">Inria</a> in the <a
             href="https://www.irif.fr/equipes/picube">PICUBE</a> team at the <a href="https://www.irif.fr/">IRIF</a>
           laboratory.
-          My research focuses on probabilistic programming languages (language design, semantics, static
-          analysis, compilation, inference), and also generative AI for interactive theorem proving.
-          Since 2024, I co-lead the Inria Défi <a href="https://project.inria.fr/llm4code">LLM4Code</a>.
+          My research focuses on generative AI for interactive theorem proving (agent-prover interfaces, tools, specialized models), and on probabilistic programming languages (language design, semantics, static
+          analysis, compilation, inference). 
         </p>
         <p>
+          Since 2024, I have co-led the Inria Défi <a href="https://project.inria.fr/llm4code">LLM4Code</a>, and I started <a href="https://github.com/LLM4Rocq">LLM4Rocq</a> research group.
           From 2020 to 2023 I was a member of the <a href="https://parkas.di.ens.fr/">PARKAS</a> team at the <a
             href="https://www.di.ens.fr/">Département
             d'Informatique (DI)</a> of the École normale supérieure (ENS).
           From 2017 to 2020 I was a research staff member at the <a href="https://www.research.ibm.com/">IBM T.J. Watson
             Research Center</a> in the AI Programming Models team.
         </p>
+      </section>
+
+      <section id="news">
+        <h2> News </h2>
+        <ul class="news">
+          <li>
+            <span class="news-date">Aug 2026</span>
+            <span><a href="https://github.com/LLM4Rocq/small-prime-gap"><span class="title">small-prime-gap</span></a> (with A. Mahboubi), a Rocq mechanisation of the computer-aided step of Prop.&nbsp;4.3(2) in Maynard's &ldquo;Small gaps between primes&rdquo;, accepted at AITP 2026.</span>
+          </li>
+          <li>
+            <span class="news-date">Jul 2026</span>
+            <span><a href="papers/icml26.pdf">&ldquo;PPDL: LLM-Based Flows as Probabilistic&nbsp;Programs&rdquo;</a> (with L. Mandel, M. Vaziri, M. Hirzel) presented at ICML 2026 (main track), and
+            <a href="papers/ai4research_icml26.pdf">&ldquo;Library Before Proof&rdquo;</a> (with M. Lelarge) at AI4Research@ICML 2026.</span>
+          </li>
+          <li>
+            <span class="news-date">Jun 2026</span>
+            <span>Putnam 2025 in Rocq: all twelve problems closed, <a href="https://github.com/LLM4Rocq/Putnam2025-Rocq">12/12 verified</a>.</span>
+          </li>
+        </ul>
       </section>
 
       <section id="service">
@@ -69,18 +88,11 @@
           </tr>
           <tr>
             <th scope="col"><span class="hs text-nowrap">PC Member</span></th>
-            <td>AITP 2026, ICML 2026, OOPSLA 2025, JFLA 2025, JFLA 2024, FDL 2023, LCTES 2023, LAFI 2023, REBLS 2022, REBLS 2021, EMSOFT 2021,
-              DEBS 2021
-              industry,
-              LCTES 2021, CC 2021, FDL 2020, EMSOFT 2020, LCTES 2020, DEBS 2020 industry, REBELS 2019, EMSOFT
-              2019, DEBS 2018,
-              DLS
-              2017</td>
+            <td>AITP 2026, OOPSLA 2025, JFLA 2025, JFLA 2024, FDL 2023, LCTES 2023, LAFI 2023, REBLS 2022, REBLS 2021, EMSOFT 2021, DEBS 2021 industry, LCTES 2021, CC 2021, FDL 2020, EMSOFT 2020, LCTES 2020, DEBS 2020 industry, REBELS 2019, EMSOFT 2019, DEBS 2018, DLS 2017</td>
           </tr>
           <tr>
             <th scope="col"><span class="hs">Reviewer</span></th>
-            <td>OOPSLA 2026, CPP 2026, POPL 2026, ACM TECS 2024, ACM TSE 2023, IEEE TCAD 2020, ACM TECS 2020, EMSOFT 2016, EMSOFT 2015, DAC 2015, JFLA
-              2015, JFLA 2014
+            <td>MathAI@NeurIPS 2026, NeurIPS 2026, ICML 2026, OOPSLA 2026, CPP 2026, POPL 2026, ACM TECS 2024, ACM TSE 2023, IEEE TCAD 2020, ACM TECS 2020, EMSOFT 2016, EMSOFT 2015, DAC 2015, JFLA 2015, JFLA 2014
             </td>
           </tr>
         </table>
@@ -90,38 +102,32 @@
         <h2> Software </h2>
         <table class="table table-sm table-borderless">
           <tr>
-            <th scope="col"><a href="https://github.com/IBM/probzelus/">ProbZelus</a></th>
+            <th scope="col"><a href="https://github.com/LLM4Rocq/rocq-mcp/">rocq-mcp</a></th>
+            <td>MCP server for the Rocq prover <span class="desc">(OCaml/Python)</span>
+            </td>
+          </tr>
+          <tr>
+            <th scope="col"><a href="https://github.com/LLM4Rocq/mathcomp-skills/">mathcomp-skills</a></th>
+            <td>Agent skills for writing idiomatic MathComp code <span class="desc">(Rocq/Doc)</span>
+            </td>
+          </tr>
+          <tr>
+            <th scope="col"><a href="https://github.com/LLM4Rocq/pytanque">pytanque</a></th>
+            <td>Python API for lightweight communication with Rocq <span class="desc">(OCaml/Python)</span>
+            </td>
+          </tr>
+          <tr>
+            <th scope="col"><a href="https://github.com/IBM/probzelus/">probzelus</a></th>
             <td>Compiler and runtime for a synchronous probabilistic language <span class="desc">(OCaml/Zelus)</span>
             </td>
           </tr>
           <tr>
-            <th scope="col"><a href="https://github.com/deepppl">DPPL</a> </th>
-            <td>Compiler from Stan++ to Pyro <span class="desc">(Python/OCaml)</span></td>
+            <th scope="col"><a href="https://github.com/deepppl">dppl</a> </th>
+            <td>Compiler from Stan++ to Pyro <span class="desc">(OCaml/Python)</span></td>
           </tr>
           <tr>
-            <th scope="col"><a href="https://github.com/IBM/lale/">Lale</a></th>
+            <th scope="col"><a href="https://github.com/IBM/lale/">lale</a></th>
             <td>A library for semi-automated data science <span class="desc">(Python)</span></td>
-          </tr>
-          <tr>
-            <th scope="col"><a href="https://github.com/IBM/yaps/">YAPS</a></th>
-            <td>Transpiler from Python syntax to Stan <span class="desc">(Python)</span></td>
-          </tr>
-          <tr>
-            <th scope="col"><a href="https://github.com/IBM/wcs-ocaml/">WCS-OCaml</a></th>
-            <td>OCaml SDK for Watson Assistant <span class="desc">(OCaml)</span></td>
-          </tr>
-          <tr>
-            <th scope="col"><a href="https://cloudlens.github.io/cloudlens/index.html">CloudLens</a></th>
-            <td>Interpreter for a reactive language for analyzing cloud logs <span class="desc">(Java/Javascript)</span>
-            </td>
-          </tr>
-          <tr>
-            <th scope="col"><a href="https://github.com/gbdrt/zsy">ZSy</a></th>
-            <td>Compiler and runtime for a synchronous language with timers <span class="desc">(OCaml/Zelus)</span></td>
-          </tr>
-          <tr>
-            <th scope="col"><a href="http://reactiveml.org/reactive_asco">ReactiveAsco</a></th>
-            <td>ReactiveML sequencer for Antescofo <span class="desc">(OCaml/ReactiveML)</span></td>
           </tr>
         </table>
       </section>
@@ -140,7 +146,7 @@
         </ul>
       </section>
 
-      <section class="Selected publications">
+      <section id="publications">
         <div id="includedContent"></div>
       </section>
 
@@ -148,9 +154,9 @@
     </div> <!-- Container -->
   </div>
 
-  <script>
+  <!-- <script>
     includeHTML();
-  </script>
+  </script> -->
 
 </body>
 
