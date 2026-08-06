@@ -47,6 +47,12 @@ a:hover {
     font-weight: 400;
 }
 
+/* TABLES */
+.table th {
+    padding-right: 1.5em;
+    white-space: nowrap;
+}
+
 /* BIBLIO */
 .bibitem {
     margin-bottom: 0.5em;
